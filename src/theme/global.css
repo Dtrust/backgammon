@@ -1,0 +1,132 @@
+@import "@radix-ui/themes/styles.css";
+
+.dark, .dark-theme {
+    --blue-1: #000;
+    --blue-2: #080f27;
+    --blue-3: #0f1959;
+    --blue-4: #151f7d;
+    --blue-5: #1c2995;
+    --blue-6: #2435a9;
+    --blue-7: #2c41c1;
+    --blue-8: #344ce3;
+    --blue-9: #2536b6;
+    --blue-10: #1c2a95;
+    --blue-11: #93b2ff;
+    --blue-12: #d0e1ff;
+
+    --gray-1: #000;
+    --gray-2: #121315;
+    --gray-3: #1f1f22;
+    --gray-4: #27282c;
+    --gray-5: #2f3035;
+    --gray-6: #393a3f;
+    --gray-7: #46474e;
+    --gray-8: #5e606a;
+    --gray-9: #6c6e79;
+    --gray-10: #797b86;
+    --gray-11: #b2b3bd;
+    --gray-12: #eeeef0;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+        .dark, .dark-theme {
+            --blue-1: oklch(0% 0.041 269);
+            --blue-2: oklch(17.7% 0.0501 269);
+            --blue-3: oklch(25.7% 0.115 269);
+            --blue-4: oklch(31.1% 0.1547 269);
+            --blue-5: oklch(35.7% 0.1734 269);
+            --blue-6: oklch(40.1% 0.1835 269);
+            --blue-7: oklch(44.9% 0.1995 269);
+            --blue-8: oklch(50.2% 0.2277 269);
+            --blue-9: oklch(41.6% 0.1995 269);
+            --blue-10: oklch(35.8% 0.1734 269);
+            --blue-11: oklch(77.7% 0.2046 269);
+            --blue-12: oklch(91.1% 0.071 269);
+
+            --blue-a1: color(display-p3 0 0 0 / 0);
+            --blue-a2: color(display-p3 0.2431 0.4039 0.9961 / 0.146);
+            --blue-a3: color(display-p3 0.2 0.2941 1 / 0.334);
+            --blue-a4: color(display-p3 0.1922 0.2588 1 / 0.471);
+            --blue-a5: color(display-p3 0.2196 0.2863 1 / 0.561);
+            --blue-a6: color(display-p3 0.2471 0.3255 1 / 0.64);
+            --blue-a7: color(display-p3 0.2588 0.3451 1 / 0.73);
+            --blue-a8: color(display-p3 0.2588 0.3412 1 / 0.859);
+            --blue-a9: color(display-p3 0.2353 0.3098 1 / 0.687);
+            --blue-a10: color(display-p3 0.2196 0.2941 1 / 0.561);
+            --blue-a11: color(display-p3 0.6157 0.7098 1 / 0.977);
+            --blue-a12: color(display-p3 0.8353 0.8863 1 / 0.989);
+
+            --blue-contrast: #fff;
+            --blue-surface: color(display-p3 0.0706 0.1176 0.2902 / 0.5);
+            --blue-indicator: oklch(41.6% 0.1995 269);
+            --blue-track: oklch(41.6% 0.1995 269);
+
+            --gray-1: oklch(0% 0.0042 277.7);
+            --gray-2: oklch(18.5% 0.004 277.7);
+            --gray-3: oklch(24% 0.0055 277.7);
+            --gray-4: oklch(27.7% 0.0075 277.7);
+            --gray-5: oklch(31% 0.0089 277.7);
+            --gray-6: oklch(34.8% 0.01 277.7);
+            --gray-7: oklch(40% 0.0121 277.7);
+            --gray-8: oklch(49.1% 0.0157 277.7);
+            --gray-9: oklch(54% 0.0167 277.7);
+            --gray-10: oklch(58.6% 0.0165 277.7);
+            --gray-11: oklch(77% 0.0138 277.7);
+            --gray-12: oklch(94.9% 0.0026 277.7);
+
+            --gray-a1: color(display-p3 0 0 0 / 0);
+            --gray-a2: color(display-p3 0.851 0.898 0.9961 / 0.083);
+            --gray-a3: color(display-p3 0.9098 0.9098 0.9961 / 0.134);
+            --gray-a4: color(display-p3 0.8863 0.9098 1 / 0.173);
+            --gray-a5: color(display-p3 0.8863 0.9059 1 / 0.208);
+            --gray-a6: color(display-p3 0.902 0.9176 1 / 0.248);
+            --gray-a7: color(display-p3 0.9098 0.9255 1 / 0.302);
+            --gray-a8: color(display-p3 0.898 0.9176 1 / 0.412);
+            --gray-a9: color(display-p3 0.902 0.9176 1 / 0.471);
+            --gray-a10: color(display-p3 0.9098 0.9255 1 / 0.522);
+            --gray-a11: color(display-p3 0.9451 0.9529 1 / 0.738);
+            --gray-a12: color(display-p3 0.9922 0.9922 1 / 0.942);
+
+            --gray-contrast: #FFFFFF;
+            --gray-surface: color(display-p3 0 0 0 / 5%);
+            --gray-indicator: oklch(54% 0.0167 277.7);
+            --gray-track: oklch(54% 0.0167 277.7);
+        }
+    }
+}
+
+:root, .radix-themes {
+    --cursor-button: pointer;
+    /* Шріфти */
+    --default-font-family: 'Inter', system-ui, sans-serif;
+    --heading-font-family: 'Inter', system-ui, sans-serif;
+
+    /*!* адаптивні розміри шрифтів *!*/
+    --font-size-1: clamp(10px, 1.2vw, 12px);
+    --font-size-2: clamp(12px, 1.4vw, 14px);
+    --font-size-3: clamp(14px, 1.6vw, 16px);
+    --font-size-4: clamp(18px, 2vw, 20px);
+    --font-size-5: clamp(22px, 2.5vw, 24px);
+
+    /*!* фдфптивні відступи *!*/
+    --space-1: clamp(2px, 0.5vw, 4px);
+    --space-2: clamp(4px, 1vw, 8px);
+    --space-3: clamp(8px, 1.5vw, 12px);
+    --space-4: clamp(12px, 2vw, 16px);
+    --space-5: clamp(20px, 3vw, 24px);
+    --space-6: clamp(28px, 4vw, 32px);
+    --space-7: clamp(36px, 5vw, 40px);
+    --space-8: clamp(44px, 6vw, 48px);
+    --space-9: clamp(35px, 7vw, 50px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.dark, .dark-theme, :is(.dark, .dark-theme) :where(.radix-themes:not(.light, .light-theme)) {
+    --color-background: #000;
+}
+
+
