@@ -1,7 +1,7 @@
 import React from 'react';
 import { type GameModel } from '@/models/Game.ts';
 import { Button } from '@radix-ui/themes';
-import { useMyPlayer } from '@/store/myPlayer.tsx';
+import { useMyPlayer, useRoomTimer } from '@/store/myPlayer.tsx';
 import { useGame } from '@/store/game.tsx';
 
 interface IDiceRollerProps {
@@ -17,6 +17,7 @@ export const DiceRoller: React.FC<IDiceRollerProps> = ({
 }) => {
     const myPlayer = useMyPlayer();
     const game = useGame();
+    const timer = useRoomTimer();
 
     const activePlayer = game?.players.find(player => player.isActive);
 
@@ -39,14 +40,14 @@ export const DiceRoller: React.FC<IDiceRollerProps> = ({
                         </Button>
                     ) : (
                         <>
-                            {possibleMovesLength === 0 && (
+                            {possibleMovesLength === 0 && !timer ? (
                                 <Button
                                     size="4"
                                     onClick={handleRoll}
                                     disabled={disabled}>
                                     🎲 Roll Dice
                                 </Button>
-                            )}
+                            ) : null}
                         </>
                     )}
                 </div>
