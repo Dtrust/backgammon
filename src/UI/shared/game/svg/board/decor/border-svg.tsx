@@ -12,8 +12,8 @@ export const BorderSvg: React.FC<IBoarderSvg> = ({ vbW, vbH }) => {
             y={4}
             rx={22}
             ry={22}
-            width={vbW - 8}
-            height={vbH - 8}
+            width={vbW}
+            height={vbH}
             fill="url(#woodPattern)"
             stroke="#101010e3"
             strokeWidth={6}

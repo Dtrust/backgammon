@@ -18,25 +18,25 @@ export const CentralBarSvg: React.FC<ICentralBarSvg> = ({
             {/* загальний прямокутник з текстурою */}
             <rect
                 x={padding + 6 * pointWidth}
-                y={padding}
+                y={padding - 5}
                 width={barWidth}
-                height={vbH - padding * 2}
-                rx={6}
-                ry={6}
+                height={vbH + 15 - padding * 2}
+                rx={0}
+                ry={0}
                 fill="url(#woodPattern)"
-                stroke="#321f18"
-                strokeWidth={1}
+                // stroke="#321f18"
+                // strokeWidth={1}
             />
 
             {/* вертикальна смуга по центру */}
-            <line
-                x1={padding + 6 * pointWidth + barWidth / 2}
-                x2={padding + 6 * pointWidth + barWidth / 2}
-                y1={padding}
-                y2={vbH - padding}
-                stroke="rgba(0,0,0,0.2)"
-                strokeWidth={1.5}
-            />
+            {/*<line*/}
+            {/*    x1={padding + 6 * pointWidth + barWidth / 2}*/}
+            {/*    x2={padding + 6 * pointWidth + barWidth / 2}*/}
+            {/*    y1={padding}*/}
+            {/*    y2={vbH - padding}*/}
+            {/*    stroke="rgba(0,0,0,0.2)"*/}
+            {/*    strokeWidth={1.5}*/}
+            {/*/>*/}
         </g>
     );
 };

@@ -30,6 +30,11 @@ export const ChipUI: React.FC<IChipProps> = ({
 
     const { x, y, radius } = setChipPosition(slotIndex, stackIndex);
 
+    const [localPosition, setLocalPosition] = React.useState<{
+        x: number;
+        y: number;
+    }>({ x, y });
+
     const handleClick = (e: React.MouseEvent) => {
         e.stopPropagation();
         if (game?.activePlayerID !== myPlayer?.id) return;
@@ -49,20 +54,30 @@ export const ChipUI: React.FC<IChipProps> = ({
         if (!setAnimationDataChip || !animationData) {
             return;
         }
-        handleMoveChip(animationData?.targetSlotIDX);
+        setLocalPosition({
+            x: animationData.targetX,
+            y: animationData.targetY,
+        });
+        // requestAnimationFrame(() => {
+        handleMoveChip(animationData.targetSlotIDX);
         setAnimationDataChip(null);
+        // });
     };
 
     return (
         <motion.g
             aria-label="Chip"
             onClick={e => handleClick(e)}
-            initial={{ x: x - radius, y: y - radius }}
+            initial={{
+                x: localPosition.x - radius,
+                y: localPosition.y - radius,
+            }}
             animate={
                 animationData?.chipID === data.id && animationData?.isMoving
                     ? { x: animationData.targetX, y: animationData.targetY }
                     : undefined
             }
+            // layoutId={data.id}
             transition={{ duration: 0.5 }}
             onAnimationComplete={onCompleteAnimation}>
             <ChipSvg color={color} radius={radius} />

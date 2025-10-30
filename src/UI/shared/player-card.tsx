@@ -8,37 +8,33 @@ import type { PlayerModel } from '@/models/Player.ts';
 interface IPlayerCardProps {
     player: PlayerModel;
     className?: string;
+    index: number;
 }
 
 export const PlayerCardUI: React.FC<IPlayerCardProps> = ({
     player,
     className,
+    index,
 }) => {
     if (!player || !player.color) return;
-
+    console.log('player.index', player);
     return (
         <StyledPlayerCard $isActive={player.isActive} className={className}>
             <Flex gap="2" align="center">
-                <Flex align="center" direction="column" gap="1">
-                    <StyledPlayerAvatar
-                        index={player.playerIndex}
-                        avatar={player.avatar}
-                    />
+                <Flex
+                    align="center"
+                    gap="4"
+                    flexGrow="1"
+                    justify={index === 1 ? 'end' : 'start'}>
+                    <StyledPlayerAvatar index={index} avatar={player.avatar} />
+                    <StyledPlayerName as="p" size="2" index={index}>
+                        {player?.name}
+                    </StyledPlayerName>
                 </Flex>
-                <StyledPlayerName as="p" size="2" index={player.playerIndex}>
-                    {player?.name}
-                </StyledPlayerName>
-                <StyledChip index={player.playerIndex} viewBox="0 0 50 50">
-                    <ChipSvg color={player.color} radius={20} />
+                <StyledChip index={index} viewBox="0 0 50 50">
+                    <ChipSvg color={player.color} radius={25} />
                 </StyledChip>
             </Flex>
-            {/*<Modal isOpen={isModalOpen}>*/}
-            {/*    <div>*/}
-            {/*        Player <span style={{ color: 'red' }}>{player?.name}</span>{' '}*/}
-            {/*        has won the game!*/}
-            {/*    </div>*/}
-            {/*    <button onClick={handleNewGame}>New Game</button>*/}
-            {/*</Modal>*/}
         </StyledPlayerCard>
     );
 };

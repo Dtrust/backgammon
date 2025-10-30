@@ -16,7 +16,7 @@ export const BoardSvg: React.FC<IBoardSvg> = ({ children }) => {
     const { vbW, vbH, padding, barWidth, pointWidth } = getBoardGeometry();
 
     return (
-        <svg viewBox="0 0 1000 800" style={{ height: '85%' }}>
+        <svg viewBox={`0 0 ${vbW} ${vbH}`}>
             <g
                 width={vbW}
                 height={vbH}

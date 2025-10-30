@@ -3,6 +3,8 @@ import type { Socket } from 'socket.io-client';
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
+console.log('Socket server URL:', SERVER_URL);
+
 export const socket: Socket = io(SERVER_URL, {
     transports: ['websocket'],
     autoConnect: false,

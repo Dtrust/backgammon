@@ -60,7 +60,7 @@ export const RectangleSvg: React.FC<IRectangleSvg> = ({
                 fill={isEven ? 'url(#triLight)' : 'url(#triDark)'}
                 stroke="#2b190f"
                 strokeOpacity={0.16}
-                strokeWidth={0.8}
+                strokeWidth={1.5}
             />
             {positionOnBoard === 'top' && (
                 <polygon
@@ -112,7 +112,7 @@ export const RectangleSvg: React.FC<IRectangleSvg> = ({
                 x={cx - pocketR * 2}
                 y={positionOnBoard === 'top' ? topBaseY : bottomBaseY - pocketR}
                 width={pocketR * 4}
-                height={pocketR}
+                height={pocketR + 2.5}
                 fill="url(#woodPattern)"
                 mask={`url(#mask-${positionOnBoard === 'top' ? 'top' : 'bot'}-${index})`}
                 filter="url(#pocketInner)"
